@@ -1,0 +1,9 @@
+venv/
+*.pyc
+__pycache__/
+.DS_Store
+local_settings.py
+*.log
+debug.log
+*.swp
+.env
