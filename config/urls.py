@@ -12,12 +12,12 @@ from django.shortcuts import redirect
 # Настройка Swagger/OpenAPI
 schema_view = get_schema_view(
     openapi.Info(
-        title="Anim User Management API",
+        title="API управления профилями пользователей",
         default_version='v1',
-        description="This API provides endpoints for managing user profiles.",
+        description="Этот API предоставляет конечные точки для управления профилями пользователей.",
         terms_of_service="https://www.anim.example.com/terms/ ",  # Убран лишний пробел в конце
         contact=openapi.Contact(email="api-support@anim.example.com"),
-        license=openapi.License(name="MIT License"),
+        license=openapi.License(name="Лицензия MIT"),
     ),
     public=True,
     permission_classes=(permissions.AllowAny,),  # Разрешить доступ всем пользователям
