@@ -89,7 +89,7 @@ DATABASES = {
     }
 }
 
-# Международизация и локализация
+# Язык и часовой пояс
 LANGUAGE_CODE = 'ru'
 TIME_ZONE = 'UTC'
 USE_I18N = True
@@ -136,8 +136,8 @@ logger = logging.getLogger(__name__)
 # Настройки кэша Redis
 CACHES = {
     "default": {
-        "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": os.getenv("CACHE_LOCATION", "redis://127.0.0.1:6379/0"),
+        "BACKEND": "django.core.cache.backends.dummy.DummyCache",
+        "LOCATION": os.getenv("CACHE_LOCATION", "redis://127.0.0.1:6379/1"),
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
             "IGNORE_EXCEPTIONS": False,

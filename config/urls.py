@@ -15,7 +15,7 @@ schema_view = get_schema_view(
         title="API управления профилями пользователей",
         default_version='v1',
         description="Этот API предоставляет конечные точки для управления профилями пользователей.",
-        terms_of_service="https://www.anim.example.com/terms/ ",  # Убран лишний пробел в конце
+        terms_of_service="https://www.anim.example.com/terms/ ",
         contact=openapi.Contact(email="api-support@anim.example.com"),
         license=openapi.License(name="Лицензия MIT"),
     ),
@@ -24,7 +24,7 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
-    # Админка
+    # Админкаroot
     path('admin/', admin.site.urls),
 
     # JWT аутентификация
