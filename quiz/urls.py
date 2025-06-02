@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import QuestionCategoryListCreateAPIView, QuestionCategoryRetrieveUpdateDestroyAPIView, \
-                   QuestionListCreateAPIView, QuestionRetrieveUpdateDestroyAPIView, \
-                   AnswerListCreateAPIView, AnswerRetrieveUpdateDestroyAPIView, check_answer
+    QuestionListCreateAPIView, QuestionRetrieveUpdateDestroyAPIView, \
+    AnswerListCreateAPIView, AnswerRetrieveUpdateDestroyAPIView, check_answer
 
 
 urlpatterns = [
@@ -11,5 +11,5 @@ urlpatterns = [
     path('questions/<int:pk>/', QuestionRetrieveUpdateDestroyAPIView.as_view(), name='question-detail'),
     path('answers/', AnswerListCreateAPIView.as_view(), name='answer-list-create'),
     path('answers/<int:pk>/', AnswerRetrieveUpdateDestroyAPIView.as_view(), name='answer-detail'),
-    path('check_answer/', check_answer, name='check_answer'), # Добавляем URL для проверки ответа
+    path('check_answer/', check_answer, name='check_answer'),  # Добавляем URL для проверки ответа
 ]

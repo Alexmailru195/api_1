@@ -5,6 +5,7 @@ from .permissions import IsOwner, IsSectionOwner
 from .paginators import StandardResultsSetPagination
 from django.core.exceptions import PermissionDenied
 
+
 class SectionListCreateAPIView(generics.ListCreateAPIView):
     queryset = Section.objects.all()
     serializer_class = SectionSerializer
@@ -17,10 +18,12 @@ class SectionListCreateAPIView(generics.ListCreateAPIView):
     def get_queryset(self):
         return Section.objects.filter(owner=self.request.user)
 
+
 class SectionRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Section.objects.all()
     serializer_class = SectionSerializer
     permission_classes = [permissions.IsAuthenticated, IsOwner]
+
 
 class ContentListCreateAPIView(generics.ListCreateAPIView):
     queryset = Content.objects.all()
@@ -33,6 +36,7 @@ class ContentListCreateAPIView(generics.ListCreateAPIView):
         if section.owner != self.request.user and not self.request.user.is_superuser:
             raise PermissionDenied("Вы не можете добавлять контент в чужой раздел")
         serializer.save()
+
 
 class ContentRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Content.objects.all()

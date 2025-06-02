@@ -11,6 +11,7 @@ class QuestionCategory(models.Model):
         verbose_name = "Категория вопроса"
         verbose_name_plural = "Категории вопросов"
 
+
 class Question(models.Model):
     category = models.ForeignKey(QuestionCategory, on_delete=models.CASCADE, related_name='questions')
     text = models.TextField()
@@ -26,6 +27,7 @@ class Question(models.Model):
     class Meta:
         verbose_name = "Вопрос"
         verbose_name_plural = "Вопросы"
+
 
 class Answer(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name='answers')

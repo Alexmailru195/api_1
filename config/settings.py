@@ -2,6 +2,7 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 import datetime
+import logging
 
 # Базовая директория проекта
 BASE_DIR = Path(__file__).resolve().parent
@@ -130,7 +131,6 @@ CORS_ALLOWED_ORIGINS = os.getenv("CORS_ALLOWED_ORIGINS", "http://localhost:3000 
 CSRF_TRUSTED_ORIGINS = os.getenv("CSRF_TRUSTED_ORIGINS", "http://localhost:3000 http://127.0.0.1:3000").split()
 
 # Логирование
-import logging
 logger = logging.getLogger(__name__)
 
 # Настройки кэша Redis

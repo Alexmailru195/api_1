@@ -1,7 +1,7 @@
 import json
 from django.core.management.base import BaseCommand
-
 from quiz.models import QuestionCategory, Question, Answer
+
 
 class Command(BaseCommand):
     help = 'Loads quiz data from JSON file'

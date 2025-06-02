@@ -1,6 +1,7 @@
 from django.urls import path
 from .views import SectionListCreateAPIView, SectionRetrieveUpdateDestroyAPIView, \
-                   ContentListCreateAPIView, ContentRetrieveUpdateDestroyAPIView
+    ContentListCreateAPIView, ContentRetrieveUpdateDestroyAPIView
+
 
 urlpatterns = [
     path('sections/', SectionListCreateAPIView.as_view(), name='section-list-create'),

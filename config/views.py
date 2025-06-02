@@ -25,6 +25,7 @@ def api_root(request):
         'sections': reverse('section-list-create', request=request),
     })
 
+
 # Разрешаем доступ без аутентификации
 api_root.permission_classes = [AllowAny]
 

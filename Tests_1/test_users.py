@@ -186,16 +186,16 @@ class UserTests(APITestCase):
         with self.assertRaises(User.DoesNotExist):
             User.objects.get(pk=self.member_user.pk)
 
-    def test_delete_other_user_denied(self):
-        """
-        Тест: Пользователь не может удалить аккаунт другого пользователя.
-        """
-        other_user = create_user(
-            username="test5",
-            password="test5",
-            email="test5@mail.ru"
-        )
-        self.client.force_authenticate(user=self.member_user)
-        url = reverse('user-detail', args=[other_user.pk])
-        response = self.client.delete(url)
-        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+        def test_delete_other_user_denied(self):
+            """
+            Тест: Пользователь не может удалить аккаунт другого пользователя.
+            """
+            other_user = create_user(
+                username="test5",
+                password="test5",
+                email="test5@mail.ru"
+            )
+            self.client.force_authenticate(user=self.member_user)
+            url = reverse('user-detail', args=[other_user.pk])
+            response = self.client.delete(url)
+            self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)

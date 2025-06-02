@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import Section, Content
 
+
 class SectionSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
 

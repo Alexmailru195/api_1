@@ -1,6 +1,7 @@
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext as _
 
+
 class ContainsLetterValidator:
     def validate(self, password, user=None):
         if not any(char.isalpha() for char in password):
